@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShoppingCenterApp.Views.Stores.DetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:ShoppingCenterApp.ViewModels.Stores"
+    Title="DetailPage">
+    <ContentPage.BindingContext>
+        <vm:DetailPageViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Image Source="{Binding Establishment.CoverImage}" />
+            <Image Source="{Binding Establishment.LogoImage}" />
+            <Label Text="{Binding Establishment.Name}" />
+            <Label Text="{Binding Establishment.Description}" />
+            <Label Text="{Binding Establishment.Location}" />
+            <Label Text="{Binding Establishment.Phone}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

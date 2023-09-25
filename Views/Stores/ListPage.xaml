@@ -7,7 +7,7 @@
     xmlns:vm="clr-namespace:ShoppingCenterApp.ViewModels.Stores"
     Title="ListPage">
     <ContentPage.BindingContext>
-        <vm:ListPageViewModel />
+        <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
     <Grid Padding="20" RowDefinitions="50, *">
         <Entry Placeholder="Store search..." Text="{Binding TextSearch}">
@@ -18,7 +18,11 @@
         <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentFilteredList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Name}" />
+                    <Label Text="{Binding Name}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference vm}, Path=EstablishmentTappedCommand}" CommandParameter="{Binding .}" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

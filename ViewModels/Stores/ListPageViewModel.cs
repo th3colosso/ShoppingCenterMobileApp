@@ -29,5 +29,15 @@ namespace ShoppingCenterApp.ViewModels.Stores {
             EstablishmentFilteredList = _establishmentFullList.Where(x => x.Name.ToLower().Contains(TextSearch.ToLower())).ToList();
         }
 
+        [RelayCommand]
+        private async void EstablishmentTapped(Establishment establishment) {
+
+            var navigationParams = new Dictionary<string, object>() {
+                {"establishment", establishment }
+            };
+
+            await Shell.Current.GoToAsync("detail", navigationParams);
+        }
+
     }
 }
