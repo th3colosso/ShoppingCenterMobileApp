@@ -12,15 +12,15 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>ShoppingCenterApp</ApplicationTitle>
+		<ApplicationTitle>Shopping Center</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.shoppingcenterapp</ApplicationId>
+		<ApplicationId>com.colossal.shoppingcenterapp</ApplicationId>
 		<ApplicationIdGuid>20903f4d-6984-4803-8233-16108db0d899</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationVersion>100</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
@@ -33,8 +33,7 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFFFFF" />
-		<MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" 
-				  Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg_android.svg" Color="#FFFFFF" />
+		<MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg_android.svg" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FFFFFF" BaseSize="91,152" />
@@ -55,6 +54,24 @@
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Models\" />
+	  <Folder Include="ViewModels\Movies\" />
+	  <Folder Include="ViewModels\Authentications\" />
+	  <Folder Include="ViewModels\Restaurants\" />
+	  <Folder Include="ViewModels\Stores\" />
+	  <Folder Include="ViewModels\Tickets\" />
+	  <Folder Include="Views\Movies\" />
+	  <Folder Include="Views\Authentications\" />
+	  <Folder Include="Views\Tickets\" />
+	  <Folder Include="Views\Restaurants\" />
+	  <Folder Include="Views\Stores\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ShoppingCenterApp.Models\ShoppingCenterApp.Models.csproj" />
 	</ItemGroup>
 
 </Project>
