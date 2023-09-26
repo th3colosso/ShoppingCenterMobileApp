@@ -10,11 +10,14 @@
         <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
     <Grid Padding="20" RowDefinitions="50, *">
-        <Entry Placeholder="Store search..." Text="{Binding TextSearch}">
-            <Entry.Behaviors>
-                <behaviours:EventToCommandBehavior Command="{Binding StoreSearchTextChangedCommand}" EventName="TextChanged" />
-            </Entry.Behaviors>
-        </Entry>
+        <Border>
+            <Entry Placeholder="Store search..." Text="{Binding TextSearch}">
+                <Entry.Behaviors>
+                    <behaviours:EventToCommandBehavior Command="{Binding StoreSearchTextChangedCommand}" EventName="TextChanged" />
+                </Entry.Behaviors>
+            </Entry>
+        </Border>
+
         <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentFilteredList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
