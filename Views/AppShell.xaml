@@ -7,8 +7,8 @@
     xmlns:restaurants="clr-namespace:ShoppingCenterApp.Views.Restaurants"
     xmlns:stores="clr-namespace:ShoppingCenterApp.Views.Stores"
     xmlns:tickets="clr-namespace:ShoppingCenterApp.Views.Tickets"
-    Shell.FlyoutBehavior="Disabled">
-
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
     <TabBar>
         <ShellContent
             Title="Stores"
