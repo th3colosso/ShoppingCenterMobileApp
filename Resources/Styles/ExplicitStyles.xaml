@@ -12,7 +12,18 @@
     <Style x:Key="PrimaryText" TargetType="Label">
         <Setter Property="TextColor" Value="{AppThemeBinding Dark='#FFFFFF', Light='#000000'}" />
         <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextTransform" Value="Uppercase" />
         <Setter Property="FontFamily" Value="OpenSansBold" />
+    </Style>
+    <Style x:Key="HeadingText" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Dark='#FFFFFF', Light='#000000'}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="OpenSansBold" />
+    </Style>
+    <Style x:Key="DetailText" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Dark='#FFFFFF', Light='#000000'}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="OpenSansRegulaar" />
     </Style>
 
 </ResourceDictionary>
