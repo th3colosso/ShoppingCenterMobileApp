@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using ShoppingCenterApp.Models;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,8 @@ namespace ShoppingCenterApp.ViewModels.Stores {
     public partial class DetailPageViewModel : ObservableObject{
         [ObservableProperty]
         private Establishment _establishment;
+
+        [RelayCommand]
+        private void GoBackClicked() => Shell.Current.GoToAsync("..");
     }
 }

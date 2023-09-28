@@ -16,7 +16,11 @@
                 HorizontalOptions="Start"
                 Source="back.png"
                 VerticalOptions="Start"
-                WidthRequest="32" />
+                WidthRequest="32">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackClickedCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
 
             <Border
                 Margin="0,200,0,0"
