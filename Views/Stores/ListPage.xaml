@@ -9,7 +9,7 @@
     <ContentPage.BindingContext>
         <vm:ListPageViewModel x:Name="vm" />
     </ContentPage.BindingContext>
-    <Grid Padding="20" RowDefinitions="50, *">
+    <Grid Padding="20,20,20,0" RowDefinitions="50, *">
         <Border StrokeShape="RoundRectangle 5">
             <Border.Stroke>
                 <LinearGradientBrush EndPoint="1,1">
@@ -17,14 +17,21 @@
                     <GradientStop Offset="1.0" Color="#FF0000" />
                 </LinearGradientBrush>
             </Border.Stroke>
-            <Entry Placeholder="Store search..." Text="{Binding TextSearch}">
+            <Entry
+                Margin="{OnPlatform Android='5,0,0,0',
+                                    Default='0,0,0,0'}"
+                Placeholder="Store search..."
+                Text="{Binding TextSearch}">
                 <Entry.Behaviors>
                     <behaviours:EventToCommandBehavior Command="{Binding StoreSearchTextChangedCommand}" EventName="TextChanged" />
                 </Entry.Behaviors>
             </Entry>
         </Border>
 
-        <CollectionView Grid.Row="1" ItemsSource="{Binding EstablishmentFilteredList}">
+        <CollectionView
+            Grid.Row="1"
+            EmptyView="No matching records!"
+            ItemsSource="{Binding EstablishmentFilteredList}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid
