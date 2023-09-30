@@ -57,7 +57,7 @@
                         Grid.Column="1"
                         Grid.ColumnSpan="3"
                         Style="{StaticResource HeadingText}"
-                        Text="localização" />
+                        Text="Localização" />
                     <Label
                         Grid.Row="3"
                         Grid.Column="1"
