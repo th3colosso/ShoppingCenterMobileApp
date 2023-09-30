@@ -16,6 +16,7 @@ namespace ShoppingCenterApp {
                     fonts.AddFont("OpenSans-Light.ttf", "OpenSansLight");
                 });
             builder.Services.AddSingleton<StoreService>();
+            builder.Services.AddSingleton<RestaurantService>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
