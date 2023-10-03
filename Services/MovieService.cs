@@ -8,7 +8,46 @@ using System.Threading.Tasks;
 namespace ShoppingCenterApp.Services {
     public class MovieService {
         public List<Movie> GetAll() {
-            return new List<Movie>();
+            return MockMovieService.GetMovies();
         }
+    }
+    public class MockMovieService {
+        public static List<Movie> GetMovies() {
+            return new List<Movie>
+            {
+                new Movie
+                {
+                    Id = 1,
+                    Title = "Animais fantásticos\r\nO segredo de Dumbledore",
+                    Description = "O professor Alvo Dumbledore (Jude Law) sabe que o poderoso mago das trevas Gellert Grindelwald (Mads Mikkelsen) está se movimentando para assumir o controle do mundo mágico. Incapaz de detê-lo sozinho, ele pede ao magizoologista Newt Scamander (Eddie Redmayne) para liderar uma intrépida equipe de b",
+                    Duration = new TimeOnly(2, 23,0),
+
+                    CoverImage = "https://m.media-amazon.com/images/I/51WaxgXXlEL.jpg",
+                    TrailerSource = "https://arquivos.spacedu.com.br/MAUI2023/S22/01.mp4"
+                },
+                new Movie
+                {
+                    Id = 2,
+                    Title = "Os Três Mosqueteiros: D’Artagnan",
+                    Description = "D'Artagnan, um jovem gascão espirituoso, é deixado para morrer depois de tentar salvar uma jovem de ser sequestrada. Ao chegar a Paris, ele tenta por todos os meios encontrar seus agressores. Ele não sabe que sua busca o levará ao centro de uma guerra real onde o futuro da França está em jogo.",
+                    Duration = new TimeOnly(2, 1,0),
+
+                    CoverImage = "https://br.web.img3.acsta.net/c_310_420/pictures/23/04/14/22/00/1046089.jpg",
+                    TrailerSource = "https://arquivos.spacedu.com.br/MAUI2023/S22/02.mp4"
+                },
+                new Movie
+                {
+                    Id = 3,
+                    Title = "Super Mario Bros. O Filme",
+                    Description = "Mario é um encanador junto com seu irmão Luigi. Um dia, eles vão parar no reino dos cogumelos, governado pela Princesa Peach, mas ameaçado pelo rei dos Koopas, que faz de tudo para conseguir reinar em todos os lugares.",
+                    Duration = new TimeOnly(1, 32,0),
+
+                    CoverImage = "https://br.web.img2.acsta.net/pictures/23/04/03/19/45/2854005.jpg",
+                    TrailerSource = "https://arquivos.spacedu.com.br/MAUI2023/S22/03.mp4"
+                },
+
+            };
+        }
+
     }
 }

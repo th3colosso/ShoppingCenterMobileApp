@@ -17,6 +17,7 @@ namespace ShoppingCenterApp {
                 });
             builder.Services.AddSingleton<StoreService>();
             builder.Services.AddSingleton<RestaurantService>();
+            builder.Services.AddSingleton<MovieService>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
