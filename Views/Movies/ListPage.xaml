@@ -13,7 +13,10 @@
             <Label Text="CINEMIX" />
             <Label Text="Em cartaz" />
         </VerticalStackLayout>
-        <CarouselView Grid.Row="1" ItemsSource="{Binding Movies}">
+        <CarouselView
+            Grid.Row="1"
+            ItemsSource="{Binding Movies}"
+            Loop="False">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <VerticalStackLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShoppingCenterApp.Views.Movies.DetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:ShoppingCenterApp.ViewModels.Movies"
+    Title="DetailPage">
+    <ContentPage.BindingContext>
+        <vm:DetailPageViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="{Binding Movie.Title}"
+            VerticalOptions="Center" />
+        <Label
+            HorizontalOptions="Center"
+            Text="{Binding Movie.Description}"
+            VerticalOptions="Center" />
+        <Label
+            HorizontalOptions="Center"
+            Text="{Binding Movie.Duration}"
+            VerticalOptions="Center" />
+        <Image Source="{Binding Movie.CoverImage}" />
+        <Label Text="{Binding Movie.TrailerSource}" />
+    </VerticalStackLayout>
+</ContentPage>
